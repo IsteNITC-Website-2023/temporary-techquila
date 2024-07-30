@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Techquila - blog by ISTE NITC</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+                    <a href="../index.html" class="logo"><strong>Techquila</strong></a>
+                    <ul class="icons">
+                        <li><a href="https://x.com/iste_nitc?s=20" class="icon brands fa-twitter"><span
+                                    class="label">Twitter</span></a></li>
+                        <li><a href="https://www.facebook.com/istenitc" class="icon brands fa-facebook-f"><span
+                                    class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/iste_nitc?utm_source=ig_web_button_share_sheet&igsh=MmVlMjlkMTBhMg=="
+                                class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Quantum Computing</h1>
+                        <p>30 July 2024 — Written by Aishwarya and Sahil — Poster designed by Jatin
+                        </p>
+                        <!-- <a href="subpages/1.html" class="image"><img src="../images/mainpage/pic1.jpg" alt="" /></a> -->
+                    </header>
+
+                    <span class="image main"><img src="images/pic14.jpeg" alt="" /></span>
+                    <p>
+                        DISCLAIMER:This article in no way alleges that the EVMs are manipulated. The motto of the article is to create awareness about the EVM technology and its concerns, which are relevant irrespective of the
+results. 
+                    </p>
+                    <p>
+                        An Electronic Voting Machine (EVM) is a portable electronic device used to conduct elections. It is divided into two sections:
+                    </p>
+                    <0l>
+                        <li>Control unit (CU): This unit handles data management and oversees the functioning of the
+                            Ballot Units.</li>
+                        <li>Ballot unit (BU): Voters actually cast their ballots using this portion of the EVM. A cable is
+                            used to link the BU and CU.</li>
+                    </0l>
+                    <h3>Security Concerns and Safety measures of the CU-BU system:</h3>
+                    <p>
+                        According to the Election Commission of India, the CU-BU combination is a simple device with a predetermined and unchangeable function. It is programmable only once and it is not connected to the outside world. The EVM functions in a manner similar to that of a basic calculator—it is a stand-alone device that does not communicate with any other devices and performs a specific pre-designed function.
+                    </p>
+                    <p>
+                        But, given physical access, even a calculator can be hacked. Election officials maintained
+constant supervision over EVMs, with CCTVs and armed police manning double-locked strong rooms. However, pre-programmed EVMs that are transported into the districts which are triggered based on a predetermined number pattern render physical security useless. To intercept this threat, we were relying on a combination of process checks.
+                    </p>
+                    <h3>Process Checks:</h3>
+                    <ol>
+                        <li>The candidate-agnostic nature of the EVMs
+                        </li>
+                        <p>At no point throughout the voting process are the voting machines electronically aware of the names of the candidates, party or candidate symbols, or the order in which they appear on the ballot paper that is adhered to the ballot box. All that the EVMs do is record votes in accordance with each candidate's serial number. </p>
+                        
+                        <li>A two-stage randomisation of EVMs 
+                        </li>
+                        <p>EVMs are subsequently distributed at random to polling places and constituencies. The potential for targeted EVM manipulation through earlier programming was mitigated by these two stages of randomization before they were placed in district strong rooms/warehouses. This is due to the fact that prior to randomization, it would be unknown which EVM would travel to which constituency and to which booth.</p>
+                        
+                        <li>Three-stage mock polls conducted in front of political party or candidate representatives
+                        </li>
+                        <p>During the mock poll, people can cast their votes in randomly selected electronic voting
+                            machines and determine for themselves whether or not there has been any manipulation.</p>
+                    </ol>
+
+                    <h3>Implementation of VVPAT (Voter Verifiable Paper Audit Trail):</h3>
+                    <p>
+                        The current VVPAT design was first introduced in the 2019 elections. As an extra level of voter transparency, the VVPAT would print the name and symbol of the selected candidate as and when the voter pressed the button in the BU.
+                    </p>
+                    <p>
+                        This, however, appeared to contradict the fact that EVMs are to be unaware about candidate details. The VVPAT is located directly between the BU and CU. It is directly connected to them. This basically indicates that votes move from the BU to the VVPAT and subsequently from the VVPAT to the CU. There is now a programmable device between the voter casting the vote and the CU recording it. Any vulnerability in the VVPAT is a vulnerability in the voting process.
+                    </p>
+                    <p>
+                        Because the names and symbols of the candidates differ from constituency to constituency and election to election, the VVPAT must be connected to the SLU (Symbol Loading Unit) prior to each election. This implies that the VVPAT requires a programmable memory in order to upload the candidate data.
+                    </p>
+                    <p>
+                        To finish both rounds of randomization online, a software system called the EVM Management System (EMS) is hosted centrally. This implies that anyone with access to the EMS may now remotely determine which EVM is heading to which constituency and polling place as soon as randomization is complete.
+                    </p>
+                    <p>
+                        The second vulnerability stems from the fact that both randomizations were finished before the EVMs were placed into service. This suggests that each VVPAT already knows which exact booth it is going to when the external device is linked to it. This makes targeted manipulation specific to polling stations possible. As a result, the two randomization phases serve no purpose as a process safety measure.
+                    </p>
+                    <p>
+                        It is theoretically possible to avoid the fake poll on any day other than the polling day by
+performing a simple date check, since the day of the actual poll is known at the moment the
+VVPAT is connected to the external device. Therefore, any mock poll conducted on a day other than election day will be unable to identify any possible manipulation.
+                    </p>
+
+                    <p>
+                        It is again possible to defeat the third mock poll, which is conducted on election day, by using a count check that will cause the manipulation algorithm to start only after a predetermined number of votes are cast.
+                    </p>
+
+                    <h3>Conclusion</h3>
+                    <p>
+                        The field of electronic voting is fairly advanced. Both its benefits and drawbacks are well
+documented. After consulting with all relevant parties, the Election Commission of India should come up with a solution and create an open procedure that includes peer review for design vetting in order to avoid these vulnerabilities that may jeopardize the elections in the largest democracy on the earth.
+                    </p>
+                    <p>
+                        -Aishwarya & Sahil
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <!-- <li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li> -->
+                        <!-- <li>
+							<span class="opener">Submenu</span>
+							<ul>
+								<li><a href="#">Lorem Dolor</a></li>
+								<li><a href="#">Ipsum Adipiscing</a></li>
+								<li><a href="#">Tempus Magna</a></li>
+								<li><a href="#">Feugiat Veroeros</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Etiam Dolore</a></li>
+						<li><a href="#">Adipiscing</a></li>
+						<li>
+							<span class="opener">Another Submenu</span>
+							<ul>
+								<li><a href="#">Lorem Dolor</a></li>
+								<li><a href="#">Ipsum Adipiscing</a></li>
+								<li><a href="#">Tempus Magna</a></li>
+								<li><a href="#">Feugiat Veroeros</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Maximus Erat</a></li>
+						<li><a href="#">Sapien Mauris</a></li>
+						<li><a href="#">Amet Lacinia</a></li> -->
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <!-- <section>
+					<header class="major">
+						<h2>Ante interdum</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+							<p>
+								Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+								dolore aliquam.
+							</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+							<p>
+								Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+								dolore aliquam.
+							</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+							<p>
+								Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+								dolore aliquam.
+							</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<li><a href="#" class="button">More</a></li>
+					</ul>
+				</section> -->
+
+                <!-- Section -->
+                <!-- <section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>
+						Sed varius enim lorem ullamcorper dolore aliquam aenean ornare
+						velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed
+						aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+						tempus aliquam.
+					</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope">
+							<a href="#">information@untitled.tld</a>
+						</li>
+						<li class="icon solid fa-phone">(000) 000-0000</li>
+						<li class="icon solid fa-home">
+							1234 Somewhere Road #8254<br />
+							Nashville, TN 00000-0000
+						</li>
+					</ul>
+				</section> -->
+
+                <!-- Footer -->
+                <!-- <footer id="footer">
+					<p class="copyright">
+						&copy; Untitled. All rights reserved. Demo Images:
+						<a href="https://unsplash.com">Unsplash</a>. Design:
+						<a href="https://html5up.net">HTML5 UP</a>.
+					</p>
+				</footer>
+			</div>
+		</div> -->
+            </div>
+
+            <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+</body>
+
+</html>
